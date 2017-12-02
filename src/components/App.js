@@ -11,7 +11,7 @@ class App extends Component {
       groceries = this.props.ingredients.map((ingredient, index) => {
         return (
           <li key={index + 1}>
-            {ingredient.ingredientName} - {ingredient.quantity}
+            {ingredient.ingredientName} ({ingredient.quantity})
           </li>
         );
       });
@@ -25,7 +25,7 @@ class App extends Component {
           <ul>
             {groceries}
           </ul>
-          <GroceryListForm />
+          <GroceryListForm validateOnBlur={true} validateOnChange={false}/>
         </div>
       </div>
     );
